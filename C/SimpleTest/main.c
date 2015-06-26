@@ -14,7 +14,7 @@ void DoTest(long operations)
 	{
 		printf("Test case: %d Exception. Status: %d Inputs: mustBeEqual: [", ++test, SortedLimitedListGetLastError(sortedList1));
 		SortedLimitedListPrint(sortedList1_, "%0.1lf");
-		printf("] etalon: [");
+		printf("] expected: [");
 		SortedLimitedListPrint(sortedList2_, "%0.1lf");
 		printf("]\n\n");
 	}
@@ -24,7 +24,7 @@ void DoTest(long operations)
 		int b = SortedLimitedListEquals(sortedList1, sortedList2_);
 		printf("Test case: %d Error. Inputs: mustBeEqual: [", ++test);
 		SortedLimitedListPrint(sortedList1_, "%0.1lf");
-		printf("] etalon: [");
+		printf("] expected: [");
 		SortedLimitedListPrint(sortedList2_, "%0.1lf");
 		printf("]\n");
 		printf("Your output ");
@@ -36,7 +36,7 @@ void DoTest(long operations)
 	{
 		printf("Test case: %d Success. Inputs: mustBeEqual: [", ++test);
 		SortedLimitedListPrint(sortedList1_, "%0.1lf");
-		printf("] etalon: [");
+		printf("] expected: [");
 		SortedLimitedListPrint(sortedList2_, "%0.1lf");
 		printf("]\n\n");
 	}
@@ -61,32 +61,32 @@ int main(int argc, char **argv)
 
 	{
 		double needToBeEqual_0[] = { 0, 1, 2, 3, 4, 6, 7 };
-		double etalon_0[] = { 0, 1, 2, 3, 4, 5, 6, 7 };
-		Test(needToBeEqual_0, sizeof(needToBeEqual_0) / sizeof(double), etalon_0, sizeof(etalon_0) / sizeof(double), 1);
+		double expected_0[] = { 0, 1, 2, 3, 4, 5, 6, 7 };
+		Test(needToBeEqual_0, sizeof(needToBeEqual_0) / sizeof(double), expected_0, sizeof(expected_0) / sizeof(double), 1);
 	}
 
 	{
 		double needToBeEqual_1[] = { 0, 1, 2, 3, 4, 6, 7 };
-		double etalon_1[] = { 1, 2, 3, 3 };
-		Test(needToBeEqual_1, sizeof(needToBeEqual_1) / sizeof(double), etalon_1, sizeof(etalon_1) / sizeof(double), 5);
+		double expected_1[] = { 1, 2, 3, 3 };
+		Test(needToBeEqual_1, sizeof(needToBeEqual_1) / sizeof(double), expected_1, sizeof(expected_1) / sizeof(double), 5);
 	}
 
 	{
 		double needToBeEqual_2[] = { 0 };
-		double etalon_2[] = { 7 };
-		Test(needToBeEqual_2, sizeof(needToBeEqual_2) / sizeof(double), etalon_2, sizeof(etalon_2) / sizeof(double), 2);
+		double expected_2[] = { 7 };
+		Test(needToBeEqual_2, sizeof(needToBeEqual_2) / sizeof(double), expected_2, sizeof(expected_2) / sizeof(double), 2);
 	}
 
 	{
 		double needToBeEqual_3[] = { 0, 1, 1, 1, 1, 1, 1 };
-		double etalon_3[] = { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 };
-		Test(needToBeEqual_3, sizeof(needToBeEqual_3) / sizeof(double), etalon_3, sizeof(etalon_3) / sizeof(double), 17);
+		double expected_3[] = { 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 };
+		Test(needToBeEqual_3, sizeof(needToBeEqual_3) / sizeof(double), expected_3, sizeof(expected_3) / sizeof(double), 17);
 	}
 
 	{
 		double needToBeEqual_4[] = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 3 };
-		double etalon_4[] = { 0, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
-		Test(needToBeEqual_4, sizeof(needToBeEqual_4) / sizeof(double), etalon_4, sizeof(etalon_4) / sizeof(double), 16);
+		double expected_4[] = { 0, 2, 2, 2, 2, 2, 2, 2, 2, 3 };
+		Test(needToBeEqual_4, sizeof(needToBeEqual_4) / sizeof(double), expected_4, sizeof(expected_4) / sizeof(double), 16);
 	}
 
 	{
@@ -96,14 +96,14 @@ int main(int argc, char **argv)
 
 	{
 		double needToBeEqual_6[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 };
-		double etalon_6[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-		Test(needToBeEqual_6, sizeof(needToBeEqual_6) / sizeof(double), etalon_6, sizeof(etalon_6) / sizeof(double), 2);
+		double expected_6[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+		Test(needToBeEqual_6, sizeof(needToBeEqual_6) / sizeof(double), expected_6, sizeof(expected_6) / sizeof(double), 2);
 	}
 
 	{
 		double needToBeEqual_7[] = { 0, 0 };
-		double etalon_7[] = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-		Test(needToBeEqual_7, sizeof(needToBeEqual_7) / sizeof(double), etalon_7, sizeof(etalon_7) / sizeof(double), 10);
+		double expected_7[] = { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+		Test(needToBeEqual_7, sizeof(needToBeEqual_7) / sizeof(double), expected_7, sizeof(expected_7) / sizeof(double), 10);
 	}
 
 	ProcessorDelete(diffProcessor);

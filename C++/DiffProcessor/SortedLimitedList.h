@@ -5,7 +5,7 @@ namespace DiffProcessor
 {
 	template<typename T> class SortedLimitedList
 	{
-	public:
+	protected:
 		struct Entry
 		{
 			friend class SortedLimitedList;
@@ -16,6 +16,7 @@ namespace DiffProcessor
 			Entry* next;
 		};
 
+	public:
 		struct iterator
 		{
 			friend class SortedLimitedList;
@@ -25,14 +26,13 @@ namespace DiffProcessor
 			typedef Entry* pointer;
 		protected:
 			pointer _ptr;
-		public:
 			iterator(pointer ptr) : _ptr(ptr) { }
+		public:
 			self_type operator++() { self_type i = *this; _ptr = _ptr->next; return i; }
 			self_type operator++(int junk) { _ptr = _ptr->next; return *this; }
 			self_type operator--() { self_type i = *this; _ptr = _ptr->previous; return i; }
 			self_type operator--(int junk) { _ptr = _ptr->previous; return *this; }
 			reference operator*() { return _ptr->value; }
-			pointer operator->() { return _ptr->value; }
 			bool operator==(const self_type& rhs) { return _ptr == rhs._ptr; }
 			bool operator!=(const self_type& rhs) { return _ptr != rhs._ptr; }
 		};

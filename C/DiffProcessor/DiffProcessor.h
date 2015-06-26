@@ -12,7 +12,7 @@ typedef struct _PROCESSOR
 SORTED_LIMITED_LIST_DEFINE(SORTED_LIMITED_LIST, SortedLimitedList, double);
 
 PPROCESSOR ProcessorCreate();
-int ProcessorDoProcess(PPROCESSOR processor, PSORTED_LIMITED_LIST mustBeEqualTo, PSORTED_LIMITED_LIST etalon);
+int ProcessorDoProcess(PPROCESSOR processor, PSORTED_LIMITED_LIST mustBeEqualTo, const PSORTED_LIMITED_LIST expectedOutput);
 void ProcessorDelete(PPROCESSOR processor);
 
 #endif _PROCESSOR_

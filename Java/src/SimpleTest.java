@@ -17,17 +17,17 @@ public class SimpleTest {
         try {
             diffProcessor.doProcess(sortedList1, sortedList2);
             if (!sortedList1.equals(sortedList2) || !sortedList1.equals(sortedList2_) || sortedList1.getPerformedOperations() != operations) {
-                System.out.println("Test case: " + ++test + " Failed. Inputs: mustBeEqual: [" + sortedList1_ + "] etalon: [" + sortedList2_ + "]");
-                System.out.println("Test case: " + ++test + " Failed. Inputs: mustBeEqual: [" + sortedList1_ + "] etalon: [" + sortedList2_ + "]");
+                System.out.println("Test case: " + ++test + " Failed. Inputs: mustBeEqual: [" + sortedList1_ + "] expected: [" + sortedList2_ + "]");
+                System.out.println("Test case: " + ++test + " Failed. Inputs: mustBeEqual: [" + sortedList1_ + "] expected: [" + sortedList2_ + "]");
                 System.out.println("Your output " + sortedList1);
                 System.out.println("Performed operations: " + sortedList1.getPerformedOperations() + ", expected " + operations);
                 System.out.println();
             } else {
-                System.out.println("Test case: " + ++test + " Succeed. Inputs: mustBeEqual: [" + sortedList1_ + "] etalon: [" + sortedList2_ + "]");
+                System.out.println("Test case: " + ++test + " Succeed. Inputs: mustBeEqual: [" + sortedList1_ + "] expected: [" + sortedList2_ + "]");
                 System.out.println();
             }
         } catch (Exception e) {
-            System.out.println("Test case: " + ++test + " Exception. Inputs: mustBeEqual: [" + sortedList1_ + "] etalon: [" + sortedList2_ + "]");
+            System.out.println("Test case: " + ++test + " Exception. Inputs: mustBeEqual: [" + sortedList1_ + "] expected: [" + sortedList2_ + "]");
             System.out.println();
             diffProcessor.doProcess(sortedList1_, sortedList2_);
         }
@@ -52,35 +52,35 @@ public class SimpleTest {
 
     public static void main(String[] args) {
         Double[] needToBeEqual_0 = { 0.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0 };
-        Double[] etalon_0 = { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0};
-        test(needToBeEqual_0, etalon_0, 1);
+        Double[] expected_0 = { 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0};
+        test(needToBeEqual_0, expected_0, 1);
 
         Double[] needToBeEqual_1 = { 0.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0};
-        Double[] etalon_1 = { 1.0, 2.0, 3.0, 3.0};
-        test(needToBeEqual_1, etalon_1, 5);
+        Double[] expected_1 = { 1.0, 2.0, 3.0, 3.0};
+        test(needToBeEqual_1, expected_1, 5);
 
         Double[] needToBeEqual_2 = { 0.0 };
-        Double[] etalon_2 = { 7.0 };
-        test(needToBeEqual_2, etalon_2, 2);
+        Double[] expected_2 = { 7.0 };
+        test(needToBeEqual_2, expected_2, 2);
 
         Double[] needToBeEqual_3 = { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 };
-        Double[] etalon_3 = { 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0 };
-        test(needToBeEqual_3, etalon_3, 17);
+        Double[] expected_3 = { 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0, 9.0 };
+        test(needToBeEqual_3, expected_3, 17);
 
         Double[] needToBeEqual_4 = { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 3.0};
-        Double[] etalon_4 = { 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 3.0};
-        test(needToBeEqual_4, etalon_4, 16);
+        Double[] expected_4 = { 0.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 3.0};
+        test(needToBeEqual_4, expected_4, 16);
 
         Double[] needToBeEqual_5 = { 0.0, 1.0, 2.0, 3.0, 4.0, 6.0, 7.0};
-        Double[] etalon_5 = { };
-        test(needToBeEqual_5, etalon_5, 7);
+        Double[] expected_5 = { };
+        test(needToBeEqual_5, expected_5, 7);
 
         Double[] needToBeEqual_6 = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
-        Double[] etalon_6 = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-        test(needToBeEqual_6, etalon_6, 2);
+        Double[] expected_6 = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+        test(needToBeEqual_6, expected_6, 2);
 
         Double[] needToBeEqual_7 = { 0.0, 0.0};
-        Double[] etalon_7 = { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
-        test(needToBeEqual_7, etalon_7, 10);
+        Double[] expected_7 = { 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0};
+        test(needToBeEqual_7, expected_7, 10);
     }
 }
