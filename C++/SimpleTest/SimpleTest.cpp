@@ -17,38 +17,18 @@ void do_test(int operations)
 		diffProcessor->do_process(*sortedList1, *sortedList2);
 		if (*sortedList1 != *sortedList2 || *sortedList1 != *sortedList2_ || sortedList1->performed_operations() != operations)
 		{
-			std::cout << "Test case: " << (++test_index) << " Failed. Inputs: mustBeEqual: [";
-			sortedList1_->to_stream(std::cout);
-			std::cout << "] expected: [";
-			sortedList2_->to_stream(std::cout);
-			std::cout << "]" << std::endl;
-
-			std::cout << "Your output ";
-			sortedList1->to_stream(std::cout);
-			std::cout << std::endl;
-
-			std::cout << "Performed operations: " << sortedList1->performed_operations() << ", expected " << operations << std::endl;
-			std::cout << std::endl;
+			std::cout << "Test case: " << (++test_index) << " Failed. Inputs: mustBeEqual: [" << sortedList1_ << "] expected: ["  << sortedList2_ << "]" << std::endl ;
+			std::cout << "Your output " << sortedList1 << std::endl;
+			std::cout << "Performed operations: " << sortedList1->performed_operations() << ", expected " << operations << std::endl << std::endl;;
 		}
 		else
 		{
-			std::cout << "Test case: " << (++test_index) << " Succeed. Inputs: mustBeEqual: [";
-			sortedList1_->to_stream(std::cout);
-			std::cout << "] expected: [";
-			sortedList2_->to_stream(std::cout);
-			std::cout << "]" << std::endl;
-			std::cout << std::endl;
+			std::cout << "Test case: " << (++test_index) << " Succeed. Inputs: mustBeEqual: [" << sortedList1_ << "] expected: [" << sortedList2_ << "]" << std::endl << std::endl;;
 		}
 	}
 	catch (...)
 	{
-		std::cout << "Test case: " << (++test_index) << " Exception. Inputs: mustBeEqual: [";
-		sortedList1_->to_stream(std::cout);
-		std::cout << "] expected: [";
-		sortedList2_->to_stream(std::cout);
-		std::cout << "]" << std::endl;
-
-		std::cout << std::endl;
+		std::cout << "Test case: " << (++test_index) << " Exception. Inputs: mustBeEqual: [" << sortedList1_ << "] expected: [" << sortedList2_ << "]" << std::endl << std::endl;;
 	}
 }
 

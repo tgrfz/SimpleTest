@@ -303,4 +303,20 @@ namespace DiffProcessor
 		iterator end() { return (iterator(nullptr)); }
 		const_iterator end() const { return (const_iterator(nullptr)); }
 	};
+
+
+	template <typename T >
+	std::ostream& operator<<(std::ostream& stream, SortedLimitedList<T>* list)
+	{
+		list->to_stream(stream);
+		return stream;
+	}
+
+	template <typename T >
+	std::ostream& operator<<(std::ostream& stream, SortedLimitedList<T>& list)
+	{
+		list.to_stream(stream);
+		return stream;
+	}
+
 };
