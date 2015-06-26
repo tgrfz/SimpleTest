@@ -1,7 +1,3 @@
-// SimpleTest.cpp : Defines the entry point for the console application.
-//
-
-#include "stdafx.h"
 #include <iostream>
 #include "../DiffProcessor/Processor.h"
 
@@ -66,7 +62,7 @@ void test(double array1[], size_t size1, double array2[], size_t size2, int oper
 	do_test(operations);
 }
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, const char * argv[])
 {
 	diffProcessor = new Processor(10);
 
@@ -105,4 +101,3 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	return 0;
 }
-
