@@ -23,7 +23,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiffProcessor.c">
+    <ClCompile Include="Processor.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

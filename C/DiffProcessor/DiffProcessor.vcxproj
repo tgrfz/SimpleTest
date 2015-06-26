@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiffProcessor.c" />
+    <ClCompile Include="Processor.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DiffProcessor.h" />
