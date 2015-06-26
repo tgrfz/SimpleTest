@@ -37,6 +37,26 @@ namespace DiffProcessor
 			bool operator!=(const self_type& rhs) { return _ptr != rhs._ptr; }
 		};
 
+		struct const_iterator
+		{
+			friend class SortedLimitedList;
+			typedef const_iterator self_type;
+			typedef T value_type;
+			typedef T& reference;
+			typedef Entry* pointer;
+		protected:
+			pointer _ptr;
+			const_iterator(pointer ptr) : _ptr(ptr) { }
+		public:
+			self_type operator++() { self_type i = *this; _ptr = _ptr->next; return i; }
+			self_type operator++(int junk) { _ptr = _ptr->next; return *this; }
+			self_type operator--() { self_type i = *this; _ptr = _ptr->previous; return i; }
+			self_type operator--(int junk) { _ptr = _ptr->previous; return *this; }
+			reference operator*() { return _ptr->value; }
+			bool operator==(const self_type& rhs) { return _ptr == rhs._ptr; }
+			bool operator!=(const self_type& rhs) { return _ptr != rhs._ptr; }
+		};
+
 	protected:
 		long _limit;
 		long _count;
@@ -272,6 +292,8 @@ namespace DiffProcessor
 			return !(*this == other);
 		}
 
+		const_iterator first() const { return (const_iterator(_first)); }
+		const_iterator last() const { return (const_iterator(_last)); }
 
 		iterator first() { return (iterator(_first)); }
 		iterator last() { return (iterator(_last)); }
@@ -280,5 +302,6 @@ namespace DiffProcessor
 		long performed_operations() { return _performed_operations; }
 
 		iterator end() { return (iterator(nullptr)); }
+		const_iterator end() const { return (const_iterator(nullptr)); }
 	};
 };
