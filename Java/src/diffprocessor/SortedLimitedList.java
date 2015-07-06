@@ -78,7 +78,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
 
     public void fromArray(T[] array)
     {
-        Clear();
+        clear();
         for (int i = 0; i < array.length; ++i)
             addLast(array[i]);
         performedOperations = 0;
@@ -86,7 +86,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
 
     public void fromList(List<T> array)
     {
-        Clear();
+        clear();
         for (int i = 0; i < array.size(); ++i)
             addLast(array.get(i));
         performedOperations = 0;
@@ -213,7 +213,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         free(entry);
     }
 
-    public void Clear()
+    public void clear()
     {
         Entry entry = first, next;
         while (entry != null)
@@ -225,7 +225,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         performedOperations = 0;
     }
 
-    public Boolean equals(SortedLimitedList<T> list)
+    public boolean equals(SortedLimitedList<T> list)
     {
         Entry e1 = first;
         Entry e2 = list.first;
