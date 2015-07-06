@@ -76,16 +76,14 @@ public class SortedLimitedList<T extends Comparable<T>> {
         }
     }
 
-    public void fromArray(T[] array)
-    {
+    public void fromArray(T[] array) {
         clear();
         for (int i = 0; i < array.length; ++i)
             addLast(array[i]);
         performedOperations = 0;
     }
 
-    public void fromList(List<T> array)
-    {
+    public void fromList(List<T> array) {
         clear();
         for (int i = 0; i < array.size(); ++i)
             addLast(array.get(i));
@@ -93,8 +91,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         StringBuilder builder = new StringBuilder();
         Entry e = first;
         while (e != null)
@@ -110,8 +107,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         return builder.toString();
     }
 
-    public void addAfter(Entry after, T value)
-    {
+    public void addAfter(Entry after, T value) {
         if (after == null)
             addLast(value);
         else
@@ -134,8 +130,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         }
     }
 
-    public void addBefore(Entry before, T value)
-    {
+    public void addBefore(Entry before, T value) {
         if (before == null)
             addFirst(value);
         else
@@ -158,8 +153,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         }
     }
 
-    public void addLast(T value)
-    {
+    public void addLast(T value) {
         Entry entry = allocate();
 
         entry.value = value;
@@ -177,8 +171,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         check(entry);
     }
 
-    public void addFirst(T value)
-    {
+    public void addFirst(T value) {
         Entry entry = allocate();
 
         entry.value = value;
@@ -196,8 +189,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         check(entry);
     }
 
-    public void remove(Entry entry)
-    {
+    public void remove(Entry entry) {
         if (entry.previous != null)
             entry.previous.next = entry.next;
         else
@@ -213,8 +205,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         free(entry);
     }
 
-    public void clear()
-    {
+    public void clear() {
         Entry entry = first, next;
         while (entry != null)
         {
@@ -225,8 +216,7 @@ public class SortedLimitedList<T extends Comparable<T>> {
         performedOperations = 0;
     }
 
-    public boolean equals(SortedLimitedList<T> list)
-    {
+    public boolean equals(SortedLimitedList<T> list) {
         Entry e1 = first;
         Entry e2 = list.first;
         while (e1 != null && e2 != null)
