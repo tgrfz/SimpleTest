@@ -159,7 +159,7 @@ namespace DiffProcessor
 				add_last(value);
 			else
 			{
-				Entry& entry = allocate();
+				Entry* entry = allocate();
 
 				entry.value = value;
 				entry->previous = afteri;
@@ -296,8 +296,8 @@ namespace DiffProcessor
 
 		iterator first() { return (iterator(_first)); }
 		iterator last() { return (iterator(_last)); }
-		long count() { return _count; }
-		long limit() { return _limit; }
+		long count() const { return _count; }
+		long limit() const { return _limit; }
 		long performed_operations() { return _performed_operations; }
 
 		iterator end() { return (iterator(nullptr)); }
