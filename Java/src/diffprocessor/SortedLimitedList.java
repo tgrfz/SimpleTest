@@ -1,7 +1,6 @@
 package diffprocessor;
- 
-import sun.plugin.dom.exception.InvalidStateException;
- 
+
+
 import java.util.List;
  
 /**
@@ -56,11 +55,11 @@ public class SortedLimitedList<T extends Comparable<T>> {
     protected void check(Entry<T> entry) {
         Entry<T> before = entry.previous;
         if (before != null && before.value.compareTo(entry.value) > 0)
-            throw new InvalidStateException("List not sorted");
+            throw new IllegalStateException("List not sorted");
  
         Entry<T> after = entry.next;
         if (after != null && after.value.compareTo(entry.value) < 0)
-            throw new InvalidStateException("List not sorted");
+            throw new IllegalStateException("List not sorted");
     }
  
     public SortedLimitedList(int limit) {
